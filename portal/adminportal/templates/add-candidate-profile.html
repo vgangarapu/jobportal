@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en">
+{% load static %}
+    <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+<head>
+        <meta charset="utf-8" />
+        <title>Welcome to Verinon HD-WD</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta content="" name="description" />
+        <meta content="" name="author" />
+        <!-- BEGIN GLOBAL MANDATORY STYLES -->
+        <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&amp;subset=all" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/simple-line-icons/simple-line-icons.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/uniform/css/uniform.default.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" %}" rel="stylesheet" type="text/css" />
+        <!-- END GLOBAL MANDATORY STYLES -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <link href="{% static "adminportal/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/global/plugins/clockface/css/clockface.css" %}" rel="stylesheet" type="text/css" />
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL STYLES -->
+        <link href="{% static "adminportal/assets/global/css/components.min.css" %}" rel="stylesheet" id="style_components" type="text/css" />
+        <link href="{% static "adminportal/assets/global/css/plugins.min.css" %}" rel="stylesheet" type="text/css" />
+        <!-- END THEME GLOBAL STYLES -->
+        <!-- BEGIN THEME LAYOUT STYLES -->
+        <link href="{% static "adminportal/assets/layouts/layout/css/layout.min.css" %}" rel="stylesheet" type="text/css" />
+        <link href="{% static "adminportal/assets/layouts/layout/css/themes/darkblue.min.css" %}" rel="stylesheet" type="text/css" id="style_color" />
+        <link href="{% static "adminportal/assets/layouts/layout/css/custom.min.css" %}" rel="stylesheet" type="text/css" />
+        <!-- END THEME LAYOUT STYLES -->
+        <link rel="shortcut icon" href="favicon.ico" /> </head>
+    <!-- END HEAD -->
+
+
+    <body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white page-sidebar-closed">
+        <!-- BEGIN HEADER -->
+        <div class="page-header navbar navbar-fixed-top">
+            <!-- BEGIN HEADER INNER -->
+            <div class="page-header-inner ">
+               <!-- BEGIN LOGO -->
+                <div class="page-logo">
+                    <a href="index.html">
+                        <img src="assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
+                    <div class="menu-toggler sidebar-toggler"> </div>
+                </div>
+                <!-- END LOGO -->
+                <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+                <!-- END RESPONSIVE MENU TOGGLER -->
+                <!-- BEGIN TOP NAVIGATION MENU -->
+                <div class="top-menu">
+                    <ul class="nav navbar-nav pull-right">
+
+
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                        <li class="dropdown dropdown-user">
+                            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+
+                                <span class="username username-hide-on-mobile"> Nick </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-default">
+                                <li>
+                                    <a href="page_user_profile_1.html">
+                                        <i class="icon-user"></i> My Profile </a>
+                                </li>
+
+                                <li class="divider"> </li>
+                                <li>
+                                    <a href="page_user_lock_1.html">
+                                        <i class="icon-lock"></i> Lock Screen </a>
+                                </li>
+                                <li>
+                                    <a href="page_user_login_1.html">
+                                        <i class="icon-key"></i> Log Out </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                </div>
+                <!-- END TOP NAVIGATION MENU -->
+            </div>
+            <!-- END HEADER INNER -->
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN HEADER & CONTENT DIVIDER -->
+        <div class="clearfix"> </div>
+        <!-- END HEADER & CONTENT DIVIDER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar-wrapper">
+                <!-- BEGIN SIDEBAR -->
+                <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                <!-- DOC: Change data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                <div class="page-sidebar navbar-collapse collapse">
+                    <!-- BEGIN SIDEBAR MENU -->
+                    <!-- DOC: Apply "page-sidebar-menu-light" class right after "page-sidebar-menu" to enable light sidebar menu style(without borders) -->
+                    <!-- DOC: Apply "page-sidebar-menu-hover-submenu" class right after "page-sidebar-menu" to enable hoverable(hover vs accordion) sub menu mode -->
+                    <!-- DOC: Apply "page-sidebar-menu-closed" class right after "page-sidebar-menu" to collapse("page-sidebar-closed" class must be applied to the body element) the sidebar sub menu mode -->
+                    <!-- DOC: Set data-auto-scroll="false" to disable the sidebar from auto scrolling/focusing -->
+                    <!-- DOC: Set data-keep-expand="true" to keep the submenues expanded -->
+                    <!-- DOC: Set data-auto-speed="200" to adjust the sub menu slide up/down speed -->
+                    <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
+                        <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
+                        <li class="sidebar-toggler-wrapper hide">
+                            <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                            <div class="sidebar-toggler"> </div>
+                            <!-- END SIDEBAR TOGGLER BUTTON -->
+                        </li>
+                        <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
+                        <li class="sidebar-search-wrapper">
+                            <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                            <!-- DOC: Apply "sidebar-search-bordered" class the below search form to have bordered search box -->
+                            <!-- DOC: Apply "sidebar-search-bordered sidebar-search-solid" class the below search form to have bordered & solid search box -->
+                            <form class="sidebar-search  " action="http://keenthemes.com/preview/metronic/theme/admin_1/page_general_search_3.html" method="POST">
+                                <a href="javascript:;" class="remove">
+                                    <i class="icon-close"></i>
+                                </a>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search...">
+                                    <span class="input-group-btn">
+                                        <a href="javascript:;" class="btn submit">
+                                            <i class="icon-magnifier"></i>
+                                        </a>
+                                    </span>
+                                </div>
+                            </form>
+                            <!-- END RESPONSIVE QUICK SEARCH FORM -->
+                        </li>
+                        <li class="nav-item start active open">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-home"></i>
+                                <span class="title">Dashboard</span>
+                                <span class="arrow"></span>
+                            </a>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle"><i class="icon-user"></i><span class="title">Recruiter Management</span>
+                                <span class="selected"></span><span class="arrow open"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item"><a href="/add_recruiter" class="nav-link "><span class="title">Add Recruiter</span></a></li>
+								<li class="nav-item"><a href="/recruiter_list" class="nav-link " target="_blank"> Recruiter List</a></li>
+                                <li class="nav-item"><a href="/reset_password" class="nav-link " target="_blank"><span class="title">Reset Password</span></a>
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle"><i class="icon-users"></i><span class="title">Candidate Management</span>
+                                <span class="selected"></span><span class="arrow open"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item"><a href="/add_candidate" class="nav-link"><span class="title">Add Candidate</span></a></li>
+                                <li class="nav-item"><a href="/search_candidate" class="nav-link " target="_blank"><span class="title">Search Candidate</span></a></li>
+                                <li class="nav-item "><a href="/candidate_list" class="nav-link " target="_blank"> Candidates List</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item">
+                            <a href="javascript:;" class="nav-link nav-toggle">
+                                <i class="icon-docs"></i>
+                                <span class="title">Reports</span>
+                                <span class="arrow"></span>
+                            </a>
+                            <ul class="sub-menu">
+                                <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
+                                        <span class="title">Candidates Submitted by User</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item "><a href="#" class="nav-link "> 1 week</a></li>
+                                        <li class="nav-item "><a href="#" class="nav-link "> 1 Month</a></li>
+                                        <li class="nav-item "><a href="#" class="nav-link "> 1 Year</a></li>
+                                    </ul></li>
+
+                                    <li class="nav-item  ">
+                                    <a href="javascript:;" class="nav-link nav-toggle">
+                                        <span class="title">Candidates Overview</span>
+                                        <span class="arrow"></span>
+                                    </a>
+                                    <ul class="sub-menu">
+                                        <li class="nav-item "><a href="#" class="nav-link "> By Skill</a></li>
+                                        <li class="nav-item "><a href="#" class="nav-link "> By Country of Interest</a></li>
+                                        <li class="nav-item "><a href="#" class="nav-link "> By Country Location</a></li>
+                                    </ul></li>
+
+                            </ul>
+                        </li>
+
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- END SIDEBAR MENU -->
+                </div>
+                <!-- END SIDEBAR -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN CONTENT -->
+            <div class="page-content-wrapper">
+                <!-- BEGIN CONTENT BODY -->
+                <div class="page-content">
+                    <!-- BEGIN PAGE HEADER-->
+                    <!-- BEGIN PAGE BAR -->
+                    <div class="page-bar">
+                        <ul class="page-breadcrumb">
+                            <li>
+                                <a href="index.html">Home</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <a href="#">Candidate Management</a>
+                                <i class="fa fa-circle"></i>
+                            </li>
+                            <li>
+                                <span>Add Candidate</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- END PAGE BAR -->
+                    <!-- BEGIN PAGE TITLE-->
+                    <h3 class="page-title"> Add Candidate</h3>
+                    <!-- END PAGE TITLE-->
+                    <!-- END PAGE HEADER-->
+                    <div class="search-page search-content-4">
+                    <input type="hidden" name="candidate_id" id="candidate_id" value="">
+
+
+
+                        <!-- BEGIN PROFILE CONTENT -->
+                            <div class="profile-content">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="portlet light ">
+                                            <div class="portlet-title tabbable-line">
+                                                <div class="caption caption-md">
+                                                    <i class="icon-globe theme-font hide"></i>
+                                                    <span class="caption-subject font-blue-madison bold uppercase">Add Candidate</span>
+                                                </div>
+                                                <ul class="nav nav-tabs">
+                                                    <li class="active" id="tab_1_1_li">
+                                                        <a href="#tab_1_1" data-toggle="tab">Personal Info</a>
+                                                    </li>
+                                                    <li  id="tab_1_2_li">
+                                                        <a href="#tab_1_2" data-toggle="tab">Experience</a>
+                                                    </li>
+                                                    <li id="tab_1_3_li">
+                                                        <a href="#tab_1_3" data-toggle="tab">Location</a>
+                                                    </li>
+                                                    <li id="tab_1_4_li">
+                                                        <a href="#tab_1_4" data-toggle="tab">Employment</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="portlet-body">
+                                                <div class="tab-content">
+                                                    <!-- TAB 1-->
+                                                    <div class="tab-pane active" id="tab_1_1">
+
+
+                                                       <!-- BEGIN FORM-->
+                                               <form name="form" id="formpersonal_det" class="form-horizontal" method="POST" enctype="multipart/form-data">
+                                                    {% csrf_token %}
+                                                    <div class="form-body">
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">First Name</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="first_name" required> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Last Name</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="last_name"> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Phone Number</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="number" class="form-control" id="ph_no" required> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Email ID</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="email" class="form-control" id="email_id" required> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Skype ID</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="skype_id"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">LinkedIN ID</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="linkedin"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                            <div class="form-group">
+                                                <label class="control-label col-md-6">Total Work Experience</label>
+                                                <div class="col-md-3"><input type="number" class="form-control" id="work_exp_years"><span class="help-block">Years</span></div>
+                                                <div class="col-md-3"><input type="number" class="form-control"  id="work_exp_months"><span class="help-block">Months</span></div>
+                                            </div>
+
+
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Upload Resume</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="file" id="exampleInputFile" name="upload_resume" required> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                            <div class="form-group">
+                                                <label class="control-label col-md-6">Best Time to Contact</label>
+                                                <div class="col-md-6">
+                                                    <div class="input-group date form_meridian_datetime" data-date="2012-12-21T15:25:00Z">
+                                                        <input type="text" size="16" class="form-control" id="contact_time">
+                                                        <span class="input-group-btn">
+                                                            <button class="btn default date-set" type="button">
+                                                                <i class="fa fa-calendar"></i>
+                                                            </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Upload Picture</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="file" id="exampleUploadPicture" name="upload_picture"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+ <p></p>
+                                                            <div class="margiv-top-10" align="center">
+                                                                <input type="submit" class="btn green personalinfo" value="Save Changes">
+                                                                <button type="cancel" onclick="window.location='http://127.0.0.1:8000/dashboard';return false;">Cancel</button>
+
+                                                            </div><p>&nbsp;</p>
+
+                                                        </div>
+                                                    </form>
+
+
+
+                                                    </div>
+                                                    <!-- END TAB 1 -->
+                                                    <!--  TAB 2 -->
+                                                    <div class="tab-pane" id="tab_1_2">
+
+
+													<!-- BEGIN FORM-->
+                                                <form id="formskills_det" class="form-horizontal" name="form">
+                                                    <div class="form-body">
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-4">Primary Skills</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="primary_skils" required> </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Years</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="number" class="form-control" id="primary_years"> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                       <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-4">Secondary Skills</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="secondary_skills"> </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Years</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="number" class="form-control" id="secondary_years"> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                       <div class="row">
+                                                            <div class="col-md-8">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-4">Other Skills</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="other_skills"> </div>
+
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-4">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Years</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="number" class="form-control" id="other_years"> </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+
+                                                    </div>
+                                                     <p></p>
+                                                            <div class="margiv-top-10" align="center">
+                                                                 <input type="submit" class="btn green personalinfo" value="Save Changes">
+                                                                 <button type="cancel" onclick="window.location='http://127.0.0.1:8000/dashboard';return false;">Cancel</button>
+                                                            </div><p>&nbsp;</p>
+                                                </form>
+                                                <!-- END FORM-->
+
+
+                                                    </div>
+                                                    <!-- END TAB 2 -->
+
+                                                    <!--  TAB 3 -->
+                                                    <div class="tab-pane" id="tab_1_3">
+
+
+													<!-- BEGIN FORM-->
+                                                <form id="location_det" class="form-horizontal">
+                                                    <div class="form-body">
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Country of Citizenship</label>
+                                                                    <div class="col-md-6">
+                                                                     <select class="form-control" id="country_citizen" data-placeholder="Choose a Level" tabindex="1">
+                                                                    </select></div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Country Living In</label>
+                                                                    <div class="col-md-6">
+                                                                    <select class="form-control" id="country_living" data-placeholder="Choose a Level" tabindex="1">
+                                                                    </select></div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                       <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Provenance / State Living In</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="state_living"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Current City Living In</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="country_city_living"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+
+                                                         <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Willing to Relocate</label>
+                                                                    <div class="col-md-6">
+                                                                        <select class="form-control" id="relocate_willing" data-placeholder="Choose a Level" tabindex="1">
+                                                                        <option value="Yes">Yes</option>
+                                                                        <option value="No">No</option>
+                                                                    </select> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Interested in Relocating to</label>
+                                                                    <div class="col-md-6">
+                                                                        <select id="country_intrested" class="form-control" data-placeholder="Choose a Level" tabindex="1">
+                                                                        </select> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+                                                         <p></p>
+                                                            <div class="margiv-top-10" align="center">
+                                                                <input type="submit" class="btn green locationinfo" value="Save Changes">
+                                                                <button type="cancel" onclick="window.location='http://127.0.0.1:8000/dashboard';return false;">Cancel</button>
+                                                            </div><p>&nbsp;</p>
+                                                      </div>
+                                                </form>
+                                                <!-- END FORM-->
+
+
+                                                    </div>
+                                                    <!-- END TAB 3 -->
+                                                   <!--  TAB 4 -->
+                                                    <div class="tab-pane" id="tab_1_4">
+
+
+													<!-- BEGIN FORM-->
+                                                <form id="formemployment_det" class="form-horizontal" name="form">
+                                                    <div class="form-body">
+
+
+                                                        <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Current Employer</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="current_employer"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Notice Period</label>
+                                                                    <div class="col-md-4"><input type="number" class="form-control" id="notice_period"></div>
+                                                                        <div class="col-md-2"><span class="help-block">In Days</span></div>
+
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                       <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Current Pay</label>
+                                                                    <div class="col-md-4"><input type="number" class="form-control" id="current_pay"> </div>
+                                                                    <div class="col-md-2"><span class="help-block">In Lakhs</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Desired Pay</label>
+                                                                    <div class="col-md-4">
+                                                                        <input type="number" class="form-control" id="desired_pay"> </div>
+                                                                    <div class="col-md-2"><span class="help-block">In Lakhs</span></div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+
+                                                         <div class="row">
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Comments on Notice Period</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="text" class="form-control" id="comments"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                            <div class="col-md-6">
+                                                                <div class="form-group">
+                                                                    <label class="control-label col-md-6">Date Available</label>
+                                                                    <div class="col-md-6">
+                                                                        <input type="date" class="form-control" id="date_available"> </div>
+                                                                </div>
+                                                            </div>
+                                                            <!--/span-->
+                                                        </div>
+                                                        <!--/row-->
+                                                         <p></p>
+                                                            <div class="margiv-top-10" align="center">
+                                                                <input type="submit" class="btn green personalinfo" value="Save">
+                                                                <button type="cancel" onclick="window.location='http://127.0.0.1:8000/dashboard';return false;">Cancel</button>
+                                                            </div><p>&nbsp;</p>
+                                                      </div>
+                                                </form>
+                                                <!-- END FORM-->
+
+
+                                                    </div>
+                                                    <!-- END TAB 4 -->
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- END PROFILE CONTENT -->
+
+                    </div>
+                </div>
+                <!-- END CONTENT BODY -->
+            </div>
+            <!-- END CONTENT -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="page-footer">
+            <div class="page-footer-inner"> 2017 &copy; Verinon HD-WD.</div>
+            <div class="scroll-to-top">
+                <i class="icon-arrow-up"></i>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+        <!--[if lt IE 9]>
+<script src="{% static "adminportal/assets/global/plugins/respond.min.js" %}"></script>
+<script src="{% static "adminportal/assets/global/plugins/excanvas.min.js" %}"></script>
+<![endif]-->
+        <!-- BEGIN CORE PLUGINS -->
+        <script src="{% static "adminportal/assets/global/plugins/jquery.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap/js/bootstrap.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/js.cookie.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap-hover-dropdown/bootstrap-hover-dropdown.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/jquery-slimscroll/jquery.slimscroll.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/jquery.blockui.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/uniform/jquery.uniform.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" %}" type="text/javascript"></script>
+        <!-- END CORE PLUGINS -->
+        <!-- BEGIN PAGE LEVEL PLUGINS -->
+        <script src="{% static "adminportal/assets/global/plugins/moment.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/global/plugins/clockface/js/clockface.js" %}" type="text/javascript"></script>
+        <!-- END PAGE LEVEL PLUGINS -->
+        <!-- BEGIN THEME GLOBAL SCRIPTS -->
+        <script src="{% static "adminportal/assets/global/scripts/app.min.js" %}" type="text/javascript"></script>
+        <!-- END THEME GLOBAL SCRIPTS -->
+        <!-- BEGIN PAGE LEVEL SCRIPTS -->
+        <script src="{% static "adminportal/assets/pages/scripts/components-date-time-pickers.min.js" %}" type="text/javascript"></script>
+        <!-- END PAGE LEVEL SCRIPTS -->
+        <!-- BEGIN THEME LAYOUT SCRIPTS -->
+        <script src="{% static "adminportal/assets/layouts/layout/scripts/layout.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/layouts/layout/scripts/demo.min.js" %}" type="text/javascript"></script>
+        <script src="{% static "adminportal/assets/layouts/global/scripts/quick-sidebar.min.js" %}" type="text/javascript"></script>
+        <!-- END THEME LAYOUT SCRIPTS -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            load_country_info();
+            <!--personal details -->
+            $('form#formpersonal_det').on('submit', function (e) {
+                e.preventDefault();
+                var formData = new FormData();
+                first_name = $('#first_name').val()
+                last_name = $('#last_name').val()
+                ph_no = $('#ph_no').val()
+                email_id = $('#email_id').val()
+                skype_id = $('#skype_id').val()
+                linkedin = $('#linkedin').val()
+                work_exp_years = $('#work_exp_years').val()
+                work_exp_months = $('#work_exp_months').val()
+                exampleInputFile = $('#exampleInputFile').val()
+                contact_time = $('#contact_time').val()
+                exampleUploadPicture = $('#exampleUploadPicture').val()
+                csrfmiddle = $("input[name^='csrfmiddlewaretoken']").val()
+                formData.append("upload_resume",
+                    document.getElementById('exampleInputFile').files[0],
+                    exampleInputFile)
+                formData.append("upload_picture",
+                    document.getElementById('exampleUploadPicture').files[0],
+                    exampleUploadPicture)
+                formData.append('csrfmiddlewaretoken', csrfmiddle)
+                formData.append('contact_time', contact_time)
+                formData.append('work_exp_months', work_exp_months)
+                formData.append('work_exp_years', work_exp_years)
+                formData.append('linkedin', linkedin)
+                formData.append('skype_id', skype_id)
+                formData.append('email_id', email_id)
+                formData.append('ph_no', ph_no)
+                formData.append('last_name', last_name)
+                formData.append('first_name', first_name)
+
+                $.ajax({
+                    url: '/add_candidate/',
+                    type: 'POST',
+                    data: formData,
+                    async: false,
+                    cache: false,
+                    contentType: false,
+                    processData: false,
+                    success: function (returndata) {
+                        $('#candidate_id').val(returndata.candidate_id)
+                        $('#tab_1_1_li, #tab_1_1').removeClass('active')
+                        $('#tab_1_2_li, #tab_1_2').addClass('active')
+                    },
+                    error: function (r) {
+                                alert(r.responseText);
+                            }
+                });
+            });
+
+            <!--skills details -->
+
+            $('form#formskills_det').on('submit', function (e) {
+                e.preventDefault();
+                var candidate_id = $('#candidate_id').val();
+                var prmiary_skills = $('#primary_skils').val();
+                var secondary_skills = $('#secondary_skills').val();
+                var other_skills = $('#other_skills').val();
+                var primary_years = $('#primary_years').val();
+                var secondary_years = $('#secondary_years').val();
+                var other_years = $('#other_years').val();
+                var skill_obj = {
+                    "data": [{"name": "primary", "skills": prmiary_skills, "years": primary_years},
+                        {"name": "secondary", "skills": secondary_skills, "years": secondary_years},
+                        {"name": "others", "skills": other_skills, "years": other_years}]
+                }
+                var csrfmiddle = $("input[name^='csrfmiddlewaretoken']").val()
+                $.ajax({
+                    url: '/add_candidate_skills/',
+                    type: 'POST',
+                    datatype: 'json',
+                    data: {
+                        "skills": JSON.stringify(skill_obj), "candidate_id": candidate_id,
+                        "csrfmiddlewaretoken": csrfmiddle
+                    },
+                    success: function (returndata) {
+                        if (returndata.status) {
+                            console.log("Sucess");
+                                 $('#tab_1_2_li, #tab_1_2').removeClass('active')
+                                 $('#tab_1_3_li, #tab_1_3').addClass('active')
+                        }
+                        else {
+                            alert("OOPS!!!");
+                        }
+                    }
+                });
+
+            });
+
+            $('form#location_det').on('submit', function(e){
+                e.preventDefault();
+                var candidate_id = $('#candidate_id').val();
+                var country_citizen = $('#country_citizen').val();
+                var state_living = $('#state_living').val();
+                var country_living = $('#country_living').val();
+                var relocate_willing = $('#relocate_willing').val();
+                var country_intrested = $('#country_intrested').val();
+                var country_city_living = $('#country_city_living').val();
+                var csrfmiddle = $("input[name^='csrfmiddlewaretoken']").val();
+                if (candidate_id == ''){
+                    alert("Cannot perform this action");
+                    return false;
+                }
+                $.ajax({
+                    url: '/add_location_details/',
+                    type: 'POST',
+                    datatype: 'json',
+                    data: {
+                        "candidate_id": candidate_id,
+                        "csrfmiddlewaretoken": csrfmiddle,
+                        "country_citizen": country_citizen,
+                        "state_living": state_living,
+                        "country_living": country_living,
+                        "relocate_willing": relocate_willing,
+                        "country_intrested": country_intrested,
+                        "country_city_living": country_city_living
+                    },
+                    success: function (returndata) {
+                        if (returndata.status) {
+                            console.log("Sucess");
+                            $('#tab_1_3_li, #tab_1_3').removeClass('active')
+                            $('#tab_1_4_li, #tab_1_4').addClass('active')
+                        }
+                        else {
+                            alert("OOPS!!!");
+                        }
+                    }
+                });
+            });
+
+            <!--employment details -->
+
+            $('form#formemployment_det').on('submit', function (e) {
+                e.preventDefault();
+                var candidate_id = $('#candidate_id').val();
+                var current_employer = $('#current_employer').val();
+                var notice_period = $('#notice_period').val();
+                var current_pay = $('#current_pay').val();
+                var desired_pay = $('#desired_pay').val();
+                var comments = $('#comments').val();
+                var date_available = $('#date_available').val();
+                var employment_obj = {
+                    "data": [{
+                        "current_employer": current_employer,
+                        "notice_period": notice_period, "current_pay": current_pay, "desired_pay": desired_pay,
+                        "comments": comments,
+                        "date_available": date_available
+                    }]
+                }
+                var csrfmiddle = $("input[name^='csrfmiddlewaretoken']").val()
+                $.ajax({
+                    url: '/add_candidate_employment/',
+                    type: 'POST',
+                    datatype: 'json',
+                    data: {
+                        "employment": JSON.stringify(employment_obj), "candidate_id": candidate_id,
+                        "csrfmiddlewaretoken": csrfmiddle
+                    },
+                    success: function (returndata) {
+                        if (returndata.status) {
+                            console.log("Sucess");
+                            window.alert("Candidate details have been successfully saved...!!!")
+                            window.location.reload();
+                        }
+                        else {
+                            alert("OOPS!!!");
+                        }
+                    }
+                });
+            });
+        });
+
+        function load_country_info(){
+            var countries = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua &amp; Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
+		,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia &amp; Herzegovina","Botswana","Brazil","British Virgin Islands"
+		,"Brunei","Bulgaria","Burkina Faso","Burundi","Cambodia","Cameroon","Canada","Cape Verde","Cayman Islands","Chad","Chile","China","Colombia","Congo","Cook Islands","Costa Rica"
+		,"Cote D Ivoire","Croatia","Cruise Ship","Cuba","Cyprus","Czech Republic","Denmark","Djibouti","Dominica","Dominican Republic","Ecuador","Egypt","El Salvador","Equatorial Guinea"
+		,"Estonia","Ethiopia","Falkland Islands","Faroe Islands","Fiji","Finland","France","French Polynesia","French West Indies","Gabon","Gambia","Georgia","Germany","Ghana"
+		,"Gibraltar","Greece","Greenland","Grenada","Guam","Guatemala","Guernsey","Guinea","Guinea Bissau","Guyana","Haiti","Honduras","Hong Kong","Hungary","Iceland","India"
+		,"Indonesia","Iran","Iraq","Ireland","Isle of Man","Israel","Italy","Jamaica","Japan","Jersey","Jordan","Kazakhstan","Kenya","Kuwait","Kyrgyz Republic","Laos","Latvia"
+		,"Lebanon","Lesotho","Liberia","Libya","Liechtenstein","Lithuania","Luxembourg","Macau","Macedonia","Madagascar","Malawi","Malaysia","Maldives","Mali","Malta","Mauritania"
+		,"Mauritius","Mexico","Moldova","Monaco","Mongolia","Montenegro","Montserrat","Morocco","Mozambique","Namibia","Nepal","Netherlands","Netherlands Antilles","New Caledonia"
+		,"New Zealand","Nicaragua","Niger","Nigeria","Norway","Oman","Pakistan","Palestine","Panama","Papua New Guinea","Paraguay","Peru","Philippines","Poland","Portugal"
+		,"Puerto Rico","Qatar","Reunion","Romania","Russia","Rwanda","Saint Pierre &amp; Miquelon","Samoa","San Marino","Satellite","Saudi Arabia","Senegal","Serbia","Seychelles"
+		,"Sierra Leone","Singapore","Slovakia","Slovenia","South Africa","South Korea","Spain","Sri Lanka","St Kitts &amp; Nevis","St Lucia","St Vincent","St. Lucia","Sudan"
+		,"Suriname","Swaziland","Sweden","Switzerland","Syria","Taiwan","Tajikistan","Tanzania","Thailand","Timor L'Este","Togo","Tonga","Trinidad &amp; Tobago","Tunisia"
+		,"Turkey","Turkmenistan","Turks &amp; Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay","Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)"
+		,"Yemen","Zambia","Zimbabwe"]
+
+            for(contry in countries){
+                $('#country_intrested').append($('<option>', {
+                                    value: countries[contry],
+                                    text : countries[contry]
+                                }));
+                $('#country_living').append($('<option>', {
+                                    value: countries[contry],
+                                    text : countries[contry]
+                                }));
+                $('#country_citizen').append($('<option>', {
+                                    value: countries[contry],
+                                    text : countries[contry]
+                                }));
+            }
+        }
+    </script>
+    </body>
+</html>
